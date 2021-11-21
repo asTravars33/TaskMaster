@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS scene_options;
+
+CREATE TABLE scene_options (img VARCHAR(100), message TEXT);
+
+INSERT INTO scene_options (img, message) VALUE ("storm", "Uh oh, a storm is beginning to brew! TASK for LENGTH minutes to outsail the storm.");
+INSERT INTO scene_options (img, message) VALUE ("dolphins", "The sun now shines brightly upon the waters and a pod of dolphins appears. TASK for LENGTH minutes to receive their blessing.");
+INSERT INTO scene_options (img, message) VALUE ("trading", "You pass a trading cog. TASK for LENGTH minutes to trade for some much needed supplies!");
+INSERT INTO scene_options (img, message) VALUE ("pirates" ,"Pirate attack! TASK for LENGTH minutes to defeat the pirates.");
+INSERT INTO scene_options (img, message) VALUE ("island", "A glistening island captures your attention. TASK for LENGTH minutes to explore this magical territory!");
+

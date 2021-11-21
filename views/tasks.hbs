@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>My Tasks</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+</head>
+<center>
+<body>
+    
+	<h2>My Tasks</h2>
+	
+	<br>
+	<span>Signed in as: {{user}}</span><span>⠀⠀<a href="./logout" class="underline">Log Out</a></span>
+	<br>
+	<br>
+	
+	<div class="top-div">
+		<a href=#addtask><p class="underline"><u>Add a Task</u></p></a>
+	</div>
+	
+	<div class="top-div" onclick="show_hidden()">
+		<p class="underline">Manage Sessions</p>
+	</div>
+	
+	<div class="top-div hidden" id="hidden">
+		<br>
+		<select id="dropdown" name="dropdown" onchange="update_session()">
+			<option>None</option>
+		</select>
+		<form id="sessions-form" action="./start_session" method="get">
+			<input type="text" id="session_info" name="session_info" class="hidden"></input>
+			<button type="submit">Start Session</button>
+		</form>
+		<button onclick="make_new_session()">Create New Session</button>
+	</div>
+	<br>
+	<br>
+	
+	<p id="session_info"></p>
+	
+	{{#each info}}
+		<div id="{{this.title}}; {{this.description}}; {{this.length}}" onclick="add_to_session('{{this.title}}; {{this.description}}; {{this.length}}')">
+			<h4>{{this.title}} - {{this.length}} min</h4>
+			<img src="./images/{{this.image}}.png">
+			<p>{{this.description}}</p>
+			<button class="upvote_button">
+				<a href="./upvote?choice={{this.id}}">Move Up</a>
+			</button> 
+			<span> ⠀</span>
+			<button class="downvote_button">
+				<a href="./downvote?choice={{this.id}}">Move Down</a>
+			</button> 
+			<span> ⠀</span>
+			<br><br>
+		</div>
+		<br>
+	{{/each}}
+	<div id="addtask">
+		<form action="./updatetasks" method="get"><br>
+			<p><strong>Add a task here:</strong></p>
+			
+			<label for="q_title">Title: </label>
+			<input type="text" id="t_title" name="t_title"><br>
+			
+			<p style="margin-bottom: 2px">Description</p>
+			<textarea id="t_desc" name="t_desc" rows="3" cols="25" style="margin-top: 0px"></textarea><br>
+			<br>
+			
+			<label for="t_length">Length of task:</label>
+			<input type="text" id="t_length" name="t_length"></input><span>minutes</span>
+			
+			<div id="image_selection">
+				<p>Accompanying image?</p>
+				{{#each pic_options}}
+					<input type="radio" name="t_pic" value="{{this}}" id="{{this}}"/><label for="{{this}}" style="background-image: url('./images/{{this}}.png')"></label> 
+				{{/each}}
+			<br><br>
+			</div>
+        
+			<button type="submit" value="Submit">Submit</button><br><br>
+		</form>
+	</div>
+	<script type="text/javascript" src="./javascripts/tasks_management.js"></script>
+</body>
+</center>
+</html>

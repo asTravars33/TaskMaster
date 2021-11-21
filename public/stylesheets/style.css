@@ -1,0 +1,89 @@
+body{
+    background-color: #fffeba;
+	font-family: 'Urbanist', sans-serif;
+}
+div{
+    display: block;
+    text-align: center;
+    background-color: Thistle;
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.top-div{
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	height: 60px;
+}
+.hidden{
+	display: none;
+}
+#login{
+	width: 30%;
+	height: 350px;
+	top: 500px;
+}
+.underline{
+	text-decoration: underline;
+}
+#login-form{
+	margin: 50px 50px;
+}
+#sessions-form{
+	display: inline;
+}
+#dropdown{
+	display: inline;
+}
+#center-img{
+	top: 300px;
+	height: 550px;
+	width: auto;
+	border: 5px solid Thistle;
+}
+#image_selection{
+    display: block;
+    margin-right: 50px;
+    background-color: Thistle;
+    box-shadow: none;
+    width:100%;
+}
+input[type=radio]{
+    opacity: 0;
+}
+input[type=radio]+label{
+    border-color: white;
+    border-style: solid;
+    height: 55px;
+    width: 70px;
+    display:inline-block;
+    padding: 0 0 0 0;
+    background-size: 100px 50px;
+}
+input[type=radio]:checked+label{
+    border: 3px solid blue;
+}
+h4{
+    padding: 10px 0px 0px 0px;
+}
+img{
+    padding: 0px;
+    margin: 0px;
+    height: 100px;
+    width: auto;
+    display: center;
+}
+p{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.upvote_button:hover{
+    border: 5px solid green;
+}
+.downvote_button:hover{
+    border: 5px solid red;
+}
